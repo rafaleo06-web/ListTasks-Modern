@@ -19,6 +19,10 @@ export const ItemTasks = ({ task, onDeleteTask }) => {
                 fontSize: "12px",
                 color: "#1f1f1f",
                 border: "1px solid #c4c4c4",
+                "&:hover": {
+                  backgroundColor: getSkillColor(skill),
+                  cursor: "default",
+                },
               }}
             >
               {skill.toUpperCase()}

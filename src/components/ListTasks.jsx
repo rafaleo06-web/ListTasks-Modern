@@ -5,9 +5,9 @@ import GpsFixedIcon from "@mui/icons-material/GpsFixed";
 import { ItemTasks } from "./ItemTasks";
 
 export const ListTasks = ({ tasks, onDeleteTask }) => {
-  const taskTodo = tasks.filter((ta) => ta.state === "todo");
-  const taskDoing = tasks.filter((ta) => ta.state === "doing");
-  const taskDone = tasks.filter((ta) => ta.state === "done");
+  const taskTodo = tasks?.filter((ta) => ta.state === "todo");
+  const taskDoing = tasks?.filter((ta) => ta.state === "doing");
+  const taskDone = tasks?.filter((ta) => ta.state === "done");
 
   return (
     <Box display="flex" justifyContent="center" alignItems="center" paddingTop={"30px"} paddingX={"70px"}>
@@ -19,7 +19,7 @@ export const ListTasks = ({ tasks, onDeleteTask }) => {
               To do
             </Typography>
           </Box>
-          {taskTodo.map((task, index) => (
+          {taskTodo?.map((task, index) => (
             <ItemTasks key={index} task={task} onDeleteTask={onDeleteTask} />
           ))}
         </Grid>
@@ -30,7 +30,7 @@ export const ListTasks = ({ tasks, onDeleteTask }) => {
               Doing
             </Typography>
           </Box>
-          {taskDoing.map((task, index) => (
+          {taskDoing?.map((task, index) => (
             <ItemTasks key={index} task={task} onDeleteTask={onDeleteTask} />
           ))}
         </Grid>
@@ -41,7 +41,7 @@ export const ListTasks = ({ tasks, onDeleteTask }) => {
               Done
             </Typography>
           </Box>
-          {taskDone.map((task, index) => (
+          {taskDone?.map((task, index) => (
             <ItemTasks key={index} task={task} onDeleteTask={onDeleteTask} />
           ))}
         </Grid>
